@@ -18,7 +18,7 @@ public:
     void increment();
 
     int validation_month(int mes, int anno);
-    bool bisiesto_validation(int anno);
+    static bool bisiesto_validation(int anno);
 };
 
 Date::Date(string _day, string _month, string _year) {
@@ -87,7 +87,7 @@ bool Date::bisiesto_validation(int anno) {
 }
 
 int Date::validation_month(int mes, int anno) {
-    int dias = 31;
+    int dias;
     if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
         dias = 30;
     }

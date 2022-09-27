@@ -1,3 +1,5 @@
 # ninja log v5
 2	766	6859542167345737	CMakeFiles/date_increment.dir/main.cpp.obj	7a7f553321d5e90
 767	849	6859542168145907	date_increment.exe	dc52ab117643867b
+4	872	6859547216894307	CMakeFiles/date_increment.dir/main.cpp.obj	7a7f553321d5e90
+873	993	6859547218052143	date_increment.exe	dc52ab117643867b
