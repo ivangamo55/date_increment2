@@ -68,9 +68,35 @@ void Date::validation() {
     }
 }
 
+int Date::validation_month(int mes, int anno) {
+    int dias ;
+    if((anno%4==0) && (anno%100!=100) || (anno%400==0))
+        bis = true;
+
+    if(dia>0 && dia<32 && mes>0 && mes<13 && anno>0){
+        if(mes==1 || mes==3 || mes==5 || mes==7 || mes==8 || mes==10 || mes==12)
+        {
+            dias = 31;
+        }
+        }
+    if(mes==2 && dia<30 && bis) {
+                dias = 29;
+            }
+            else if(mes==2 && dia<29 && !bis){
+                dias = 28;
+            }
+            else if(mes!=2 && dia<31){
+                dias = 30;
+            }
+    else{
+        cout<<"\nFecha no valida";
+    }
+    return dias;
+}
+
 void Date::increment() {
     dia++;
-    if ((dia > validation_month(mes, anno))) {
+    if ((dia > validation_month(mes, anno))){
         dia = 1;
         mes++;
         if (mes > 12){
@@ -78,29 +104,8 @@ void Date::increment() {
             anno++;
         }
         cout << endl << dia << "/" << mes << "/" << anno;
-    }else{
-        cout<< "\nLa fecha no es valida";
     }
-}
-bool Date::bisiesto_validation(int anno) {
-    return((anno%4==0) && (anno%100!=100) || (anno%400==0));
-}
-
-int Date::validation_month(int mes, int anno) {
-    int dias;
-    if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
-        dias = 30;
     }
-    else if (bisiesto_validation(anno)){
-        dias  = 29;
-    }
-    else if (!bisiesto_validation(anno)) {
-        dias = 28;
-    } else {
-        dias = 31;
-    }
-    return dias;
-}
 
 int main() {
     Date vd("","","");
