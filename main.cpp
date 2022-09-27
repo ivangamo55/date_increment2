@@ -18,7 +18,6 @@ public:
     void increment();
 
     int validation_month(int mes, int anno);
-    static bool bisiesto_validation(int anno);
 };
 
 Date::Date(string _day, string _month, string _year) {
