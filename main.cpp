@@ -93,7 +93,11 @@ int Date::validation_month(int mes, int anno) {
     }
     else if (bisiesto_validation(anno)){
         dias  = 29;
-    }else{
+    }
+    else if (!bisiesto_validation(anno)){
+        dias  = 29;
+    }
+    else{
         dias = 31;
     }
     return dias;
