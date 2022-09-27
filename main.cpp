@@ -3,7 +3,7 @@
 
 using namespace std;
 int dia, mes, anno;
-bool bis = false;
+bool bis;
 
 
 class Date {
@@ -17,7 +17,8 @@ public:
     void validation();
     void increment();
 
-    int validation_month(int mes);
+    int validation_month(int mes, int anno);
+    bool bisiesto_validation(int anno);
 };
 
 Date::Date(string _day, string _month, string _year) {
@@ -41,7 +42,7 @@ void Date::intro() {
 }
 
 void Date::validation() {
-    if(anno%4==0 && anno%100!=100 || anno%400==0)
+    if((anno%4==0) && (anno%100!=100) || (anno%400==0))
         bis = true;
 
     if(dia>0 && dia<32 && mes>0 && mes<13 && anno>0){
@@ -69,32 +70,31 @@ void Date::validation() {
 
 void Date::increment() {
     dia++;
-    if ((dia > validation_month(mes))) {
+    if ((dia > validation_month(mes, anno))) {
         dia = 1;
         mes++;
+        if (mes > 12){
+            mes = 1;
+            anno++;
+        }
+        cout << endl << dia << "/" << mes << "/" << anno;
     }else{
         cout<< "\nLa fecha no es valida";
     }
-    if(mes>12){
-        mes = 1;
-        anno++;
-    }
-    if(mes == 2){
-
-    }
-    cout << endl <<dia<<"/" <<mes<<"/" << anno;
+}
+bool Date::bisiesto_validation(int anno) {
+    return((anno%4==0) && (anno%100!=100) || (anno%400==0));
 }
 
-int Date::validation_month(int mes) {
+int Date::validation_month(int mes, int anno) {
     int dias = 31;
-    if(mes == 4 or 04 || mes == 6 or 06 || mes == 9  || mes == 11){
+    if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
         dias = 30;
     }
-    if(mes == 2){
+    else if (bisiesto_validation(anno)){
+        dias  = 29;
+    }else{
         dias = 28;
-    }
-    if (anno == bis){
-        dias = 29;
     }
     return dias;
 }
