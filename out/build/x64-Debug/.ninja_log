@@ -1,0 +1,9 @@
+# ninja log v5
+0	988	6859409576562492	CMakeFiles/date_increment.dir/main.cpp.obj	118a863dae98ef5d
+989	1377	6859409580325264	date_increment.exe	3b0457f9c053289d
+0	1629	6859410546997949	CMakeFiles/date_increment.dir/main.cpp.obj	118a863dae98ef5d
+1630	1957	6859410549485390	date_increment.exe	3b0457f9c053289d
+0	805	6859419969497184	CMakeFiles/date_increment.dir/main.cpp.obj	118a863dae98ef5d
+806	994	6859419971069728	date_increment.exe	3b0457f9c053289d
+0	1005	6859453154195938	CMakeFiles/date_increment.dir/main.cpp.obj	118a863dae98ef5d
+1006	1269	6859453156369788	date_increment.exe	3b0457f9c053289d
